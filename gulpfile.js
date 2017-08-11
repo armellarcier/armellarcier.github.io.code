@@ -7,7 +7,10 @@ var gulp = require('gulp'),
     pug = require('gulp-pug'),
     prefix = require('gulp-autoprefixer'),
     sass = require('gulp-sass'),
-    browserSync = require('browser-sync');
+    babel = require('gulp-babel'),
+    browserSync = require('browser-sync'),
+    webpack = require('gulp-webpack'),
+    webpackConfig = require('./webpack.config.js');
 
 /*
  * Directories here
@@ -15,7 +18,9 @@ var gulp = require('gulp'),
 var paths = {
     public: './public/',
     sass: './src/sass/',
+    js_src: './src/js/**/*.js',
     css: './public/css/',
+    js: './public/js/',
     data: './src/_data/'
 };
 
@@ -37,16 +42,25 @@ gulp.task('pug', function() {
 });
 
 /**
+ * Compile .js files into public js directory
+ */
+gulp.task('js', () => {
+    return gulp.src(paths.js_src)
+        .pipe(webpack(webpackConfig))
+        .pipe(gulp.dest(paths.js));
+});
+
+/**
  * Recompile .pug files and live reload the browser
  */
-gulp.task('rebuild', ['pug'], function() {
+gulp.task('rebuild', ['pug', 'js'], function() {
     browserSync.reload();
 });
 
 /**
  * Wait for pug and sass tasks, then launch the browser-sync Server
  */
-gulp.task('browser-sync', ['sass', 'pug'], function() {
+gulp.task('browser-sync', ['sass', 'pug', 'js'], function() {
     browserSync({
         server: {
             baseDir: paths.public
@@ -81,11 +95,11 @@ gulp.task('sass', function() {
  */
 gulp.task('watch', function() {
     gulp.watch(paths.sass + '**/*.scss', ['sass']);
-    gulp.watch('./src/**/*.pug', ['rebuild']);
+    gulp.watch(['./src/**/*.pug', paths.js_src], ['rebuild']);
 });
 
 // Build task compile sass and pug.
-gulp.task('build', ['sass', 'pug']);
+gulp.task('build', ['sass', 'pug', 'js']);
 
 /**
  * Default task, running just `gulp` will compile the sass,
