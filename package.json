@@ -1,0 +1,24 @@
+{
+  "name": "benew.github.io",
+  "version": "1.0.0",
+  "description": "Armel Larcier's Portfolio",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Benew/benew.github.io.git"
+  },
+  "keywords": [
+    "Armel",
+    "Larcier",
+    "portfolio"
+  ],
+  "author": "Armel Larcier",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Benew/benew.github.io/issues"
+  },
+  "homepage": "https://github.com/Benew/benew.github.io#readme"
+}
