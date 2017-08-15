@@ -1,66 +1,8 @@
-#main-nav{
-    background: #DBDBDB;
-    padding: 0 1em;
-    line-height: 1em;
-}
-#main-nav ul
-{
-    list-style: none; /* aucune décoration de liste */
-    margin: 0;
-    padding: 0;
-}
-#main-nav ul li a
-{
-    display: block;
-    padding: 1em; /* padding sur a plutôt que li : zone de clic plus importante */
-    white-space: nowrap; /* interdit les sauts de ligne autorisés par les espaces */
-}
-#main-nav > ul > li
-{
-    display: inline-block;
-    vertical-align: top;
-    position: relative; /* fixe la position de référence des ul enfants */
-}
-#main-nav ul li ul
-{
-    position: absolute; /* sortie du flux : positionnement par rapport au premier parent positionné */
-    z-index: 1; /* Evite que le sous menu apparaisse sous un des éléments suivants du menu principal dans des fenêtres de moins de 500px de large */
-    background: #fff;
-    border: 1px solid #e5e5e5;
-    border-top: 5px solid #fff;
-}
-.js #main-nav ul li ul{
-    display: none;
-}
-#main-nav ul li a:hover,
-#main-nav ul li:hover > a /* permet de garder l'état hover du a lors du survol de tous les enfants du li */
-{
-    background: #fff;
-}
-#main-nav ul li a.active
-{
-    background: #666;
-    color: #fff;
-}
-.js #main-nav ul li:hover ul, /* ul inclus dans un li en état de survol */
-.js #main-nav ul li a:hover + ul, /* ul suivant un a en état de survol */
-.js #main-nav ul li a:focus + ul, /* ul suivant un a en état de focus */
-.js #main-nav ul li a.hover + ul /* ul suivant un a ayant une classe hover (ici, ajoutée via JAVASCRIPT) */
-{
-    display: block;
-}
-#main-nav ul li ul li a:hover,
-#main-nav ul li ul li:hover > a /* permet de garder l'état hover du a lors du survol de tous les enfants du li */
-{
-    background: #666;
-    color: #fff;
-}
-#main-nav ul li ul li a.active
-{
-    background: #888;
-    color: #fff;
-}
-#main-nav ul li ul li a
-{
-    font-size: 0.8em;
+#nav{
+    padding: .5em 1em;
+    text-align: center;
+    li{
+        display: inline-block;
+        margin: 0 .5em;
+    }
 }
