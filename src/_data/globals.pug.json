@@ -4,6 +4,9 @@
     "role": "Full-stack javascript web developer",
     "title": "Armel Larcier - Full-stack javascript web developer",
     "links": [
-
+        {
+            "title": "StackOverflow",
+            "url": "https://stackoverflow.com/users/1491212/armel-larcier"
+        }
     ]
 }
