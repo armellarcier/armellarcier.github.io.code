@@ -2,6 +2,7 @@
 "use strict";
 
 var gulp = require('gulp'),
+    _ = require('lodash'),
     path = require('path'),
     data = require('gulp-data'),
     pug = require('gulp-pug'),
@@ -29,9 +30,13 @@ var paths = {
  * matching file name. index.pug - index.pug.json
  */
 gulp.task('pug', function() {
+    delete require.cache[require.resolve(paths.data + 'globals.pug.json')];
+    var globals = require(paths.data + 'globals.pug.json');
+    console.log(globals);
     return gulp.src('./src/*.pug')
         .pipe(data(function(file) {
-            return require(paths.data + path.basename(file.path) + '.json');
+            delete require.cache[require.resolve(paths.data + path.basename(file.path) + '.json')];
+            return _.merge({}, globals, require(paths.data + path.basename(file.path) + '.json'));
         }))
         .pipe(pug())
         .on('error', function(err) {
@@ -95,7 +100,7 @@ gulp.task('sass', function() {
  */
 gulp.task('watch', function() {
     gulp.watch(paths.sass + '**/*.scss', ['sass']);
-    gulp.watch(['./src/**/*.pug', paths.js_src], ['rebuild']);
+    gulp.watch([paths.data + '**/*.json', './src/**/*.pug', paths.js_src], ['rebuild']);
 });
 
 // Build task compile sass and pug.
