@@ -10,6 +10,7 @@ var gulp = require('gulp'),
     sass = require('gulp-sass'),
     babel = require('gulp-babel'),
     browserSync = require('browser-sync'),
+    watch = require('gulp-watch'),
     webpack = require('gulp-webpack'),
     webpackConfig = require('./webpack.config.js');
 
@@ -18,6 +19,7 @@ var gulp = require('gulp'),
  */
 var paths = {
     public: './public/',
+    assets_src: './src/assets/',
     sass: './src/sass/',
     js_src: './src/js/**/*.js',
     css: './public/css/',
@@ -95,16 +97,30 @@ gulp.task('sass', function() {
 });
 
 /**
+ * Copy assets to public dir
+ */
+gulp.task('assets', function() {
+    return gulp.src(paths.assets_src + '**/*', {base: paths.assets_src})
+        .pipe(gulp.dest(paths.public + 'assets/'));
+});
+
+/**
  * Watch scss files for changes & recompile
  * Watch .pug files run pug-rebuild then reload BrowserSync
  */
 gulp.task('watch', function() {
     gulp.watch(paths.sass + '**/*.scss', ['sass']);
+    gulp.src(paths.assets_src + '**/*', {base: paths.assets_src})
+        .pipe(watch(paths.assets_src, {base: paths.assets_src}))
+        .pipe(gulp.dest(paths.public + 'assets/'))
+        .pipe(browserSync.reload({
+            stream: true
+        }));
     gulp.watch([paths.data + '**/*.json', './src/**/*.pug', paths.js_src], ['rebuild']);
 });
 
 // Build task compile sass and pug.
-gulp.task('build', ['sass', 'pug', 'js']);
+gulp.task('build', ['sass', 'pug', 'js', 'assets']);
 
 /**
  * Default task, running just `gulp` will compile the sass,
