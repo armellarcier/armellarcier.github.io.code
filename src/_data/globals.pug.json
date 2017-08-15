@@ -3,6 +3,13 @@
     "lastname": "Larcier",
     "role": "Full-stack javascript web developer",
     "title": "Armel Larcier - Full-stack javascript web developer",
+    "images": {
+        "header": {
+            "url": "/assets/img/armel-larcier.png",
+            "width": "160",
+            "height": "160"
+        }
+    },
     "links": [
         {
             "title": "StackOverflow",
