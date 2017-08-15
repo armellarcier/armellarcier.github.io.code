@@ -5,6 +5,7 @@
     "title": "Armel Larcier - Full-stack javascript web developer",
     "images": {
         "header": {
+            "className": "profile",
             "url": "/assets/img/armel-larcier.png",
             "width": "160",
             "height": "160"
