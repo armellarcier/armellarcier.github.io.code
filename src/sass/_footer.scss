@@ -1,0 +1,28 @@
+#footer
+{
+    background: #666;
+    color: #000;
+    padding: 0 1em;
+    text-align: right;
+    margin-top: 1em;
+}
+#footer a
+{
+    color: #bbb;
+}
+#footer ul
+{
+    list-style: none;
+    font-size: 0.8em;
+}
+#footer ul li
+{
+    display: inline-block;
+    vertical-align: middle;
+    margin-right: 1em;
+}
+#footer ul li a
+{
+    display: block;
+    padding: 0.5em 0;
+}

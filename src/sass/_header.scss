@@ -1,0 +1,19 @@
+#header
+{
+    padding: 10px;
+    text-align: center;
+}
+#header h1
+{
+    margin: 0;
+    padding: 0;
+    font-size: 4em;
+}
+#header a
+{
+    color: #fff; /* surcharge la règle ligne 18 TODO check num ligne */
+}
+#header a,
+#main-nav a{
+    text-decoration: none; /* supprime le soulignement */
+}
