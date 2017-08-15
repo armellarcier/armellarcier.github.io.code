@@ -1,1 +1,5 @@
-h1 footer
+footer#footer
+    h3 Links
+        each val in links
+            li
+                a(href=val.url target='_blank')= val.title
