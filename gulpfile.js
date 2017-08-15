@@ -34,7 +34,6 @@ var paths = {
 gulp.task('pug', function() {
     delete require.cache[require.resolve(paths.data + 'globals.pug.json')];
     var globals = require(paths.data + 'globals.pug.json');
-    console.log(globals);
     return gulp.src('./src/*.pug')
         .pipe(data(function(file) {
             delete require.cache[require.resolve(paths.data + path.basename(file.path) + '.json')];
