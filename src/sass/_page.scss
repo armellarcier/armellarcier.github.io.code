@@ -7,6 +7,6 @@ blockquote{
     text-align: justify;
     @extend .row;
 }
-b, strong{
+b, strong, a{
     color: $color-secondary;
 }
