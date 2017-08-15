@@ -1,6 +1,8 @@
 #header
 {
-    padding: 2em 1em;
+    @extend .row;
+    padding-top: 2em;
+    padding-bottom: 2em;
     text-align: center;
     img.profile{
         border-radius: 100%;
