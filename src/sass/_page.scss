@@ -1,3 +1,12 @@
 #main{
     @extend .row;
 }
+blockquote{
+    border: 1px solid $color-secondary;
+    border-left-width: 5px;
+    text-align: justify;
+    @extend .row;
+}
+b, strong{
+    color: $color-secondary;
+}
