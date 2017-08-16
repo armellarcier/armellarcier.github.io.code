@@ -34,10 +34,24 @@ var paths = {
 gulp.task('pug', function() {
     delete require.cache[require.resolve(paths.data + 'globals.pug.json')];
     var globals = require(paths.data + 'globals.pug.json');
-    return gulp.src('./src/*.pug')
+    return gulp.src(['./src/*.pug', './src/blog/**/*.pug'], {
+            base: './src'
+        })
         .pipe(data(function(file) {
-            delete require.cache[require.resolve(paths.data + path.basename(file.path) + '.json')];
-            return _.merge({}, globals, require(paths.data + path.basename(file.path) + '.json'));
+            try{
+                delete require.cache[require.resolve(paths.data + path.basename(file.path) + '.json')];
+            } catch(e) {
+                //console.error(e);
+            }
+
+            var locals = {};
+            try{
+                locals = require(paths.data + path.basename(file.path) + '.json');
+            } catch(e) {
+                //console.error(e);
+            }
+            locals = _.merge({}, globals, locals);
+            return locals;
         }))
         .pipe(pug())
         .on('error', function(err) {
