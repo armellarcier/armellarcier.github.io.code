@@ -1,21 +1,19 @@
 /*  FONTS
 ------------------------*/
 
-@import url(https://fonts.googleapis.com/css?family=Raleway:400,700);
+@import url(https://fonts.googleapis.com/css?family=Josefin+Slab:400,700);
+
 
 /*  TYPOGRAPHY
 –––––––––––––––––––––––––––*/
 
 body {
-    font-family: 'Raleway', Arial, sans-serif;
+    font-family: 'Josefin Slab', Arial, sans-serif;
     color: $color-primary;
-    font-size: 10px;
-    line-height: 1.1;
+    font-size: 12px;
+    line-height: 1.2;
     background-color: $color-background;
     margin: 0;
-    @media screen and (min-width: 480px) {
-        font-size: 12px;
-    }
     @media screen and (min-width: 640px) {
         font-size: 14px;
     }
@@ -25,6 +23,10 @@ body {
     @media screen and (min-width: 1024px) {
         font-size: 18px;
     }
+}
+
+article{
+    margin: 2em auto;
 }
 
 

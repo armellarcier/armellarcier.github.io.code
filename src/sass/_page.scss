@@ -4,6 +4,8 @@
 blockquote{
     border: 1px solid $color-secondary;
     border-left-width: 5px;
+    border-top: 0;
+    border-right: 0;
     text-align: justify;
     @extend .row;
 }
