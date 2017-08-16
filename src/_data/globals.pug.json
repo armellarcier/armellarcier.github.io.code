@@ -11,6 +11,24 @@
             "height": "160"
         }
     },
+    "menu": [
+        {
+            "title": "Armel Larcier",
+            "url": "/"
+        },
+        {
+            "title": "Resume",
+            "url": "/resume"
+        },
+        {
+            "title": "Portfolio",
+            "url": "/portfolio"
+        },
+        {
+            "title": "Dev stack",
+            "url": "/blog/my-stack.html"
+        }
+    ],
     "links": [
         {
             "title": "Twitter",
