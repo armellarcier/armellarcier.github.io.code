@@ -23,6 +23,10 @@
         {
             "title": "Portfolio",
             "url": "/portfolio"
+        },
+        {
+            "title": "Dev stack",
+            "url": "/blog/my-stack.html"
         }
     ],
     "links": [
