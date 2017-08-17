@@ -3,18 +3,32 @@
     @extend .row;
     padding-top: 2em;
     padding-bottom: 2em;
-    text-align: center;
+    .home &{
+        text-align: center;
+    }
     img.profile{
         border-radius: 100%;
         border: 5px solid $color-secondary;
         box-shadow: 0 1px 3px $color-shadow;
+        body:not(.home) &{
+            float: left;
+            margin-right: 1em;
+            width: 80px;
+            height: 80px;
+        }
     }
     h1
     {
         margin-top: 0.3em;
-        font-size: 4em;
+        .home &{
+            font-size: 4em;
+        }
     }
     h2{
+        font-size: 1em;
+        .home &{
+            font-size: 1.6em;
+        }
         margin-top: 0em;
         color: $color-secondary;
     }
