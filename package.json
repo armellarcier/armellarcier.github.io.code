@@ -1,5 +1,5 @@
 {
-  "name": "benew.github.io",
+  "name": "armellarcier.github.io",
   "version": "1.0.0",
   "description": "Armel Larcier's Portfolio",
   "main": "index.js",
@@ -13,7 +13,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Benew/benew.github.io.git"
+    "url": "git+https://github.com/armellarcier/armellarcier.github.io.git"
   },
   "keywords": [
     "Armel",
@@ -23,9 +23,9 @@
   "author": "Armel Larcier",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/Benew/benew.github.io/issues"
+    "url": "https://github.com/armellarcier/armellarcier.github.io/issues"
   },
-  "homepage": "https://github.com/Benew/benew.github.io#readme",
+  "homepage": "https://github.com/armellarcier/armellarcier.github.io#readme",
   "dependencies": {
     "babel-cli": "^6.24.1",
     "babel-core": "^6.25.0",
