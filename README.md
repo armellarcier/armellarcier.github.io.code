@@ -1,4 +1,4 @@
-# benew.github.io
+# armellarcier.github.io
 My portfolio
 
 # Contributing
@@ -12,7 +12,7 @@ gulp
 
 ## Publish
 
-This will build and push to the right repository : [https://github.com/Benew/benew.github.io](https://github.com/Benew/benew.github.io)
+This will build and push to the right repository : [https://github.com/armellarcier/armellarcier.github.io](https://github.com/armellarcier/armellarcier.github.io)
 
 ```bash
 make
